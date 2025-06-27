@@ -3,6 +3,10 @@ kind: Deployment
 metadata:
   name: grade-submission-api
   namespace: default
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: ghcr.io/durgesh191/kubernetes-cicd-tutorial
+    argocd-image-updater.argoproj.io/write-back-method: git
+    argocd-image-updater.argoproj.io/ghcr.io_durgesh191_kubernetes-cicd-tutorial.update-strategy: latest
 spec:
   replicas: 1
   selector:
